@@ -13,7 +13,6 @@ class Model
     public function __construct(PDO $pdo)
     {
         $this->connection = $pdo;
-
     }
 
     public function getConnection()
@@ -23,12 +22,10 @@ class Model
 
     public function fetchAll($query)
     {
-        $this->connection = new PDO('mysql:host=localhost;dbname=UNIVERSITY','root',' ');
-
         $sql = 'SELECT * FROM posts';
         $query = $this->connection->prepare($sql);
-        $query->fetchAll();
-        return $query;
+        $result = $query->fetchAll();
+        return $result;
     }
 
 }
