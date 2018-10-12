@@ -5,6 +5,8 @@ class Application
     public function run()
     {
         $routes = explode('/',$_SERVER['REQUEST_URI']);
+//        echo "<pre>";
+//        var_dump($_SERVER['REQUEST_URI']);
         $controllerName = 'site';
         $actionName = 'index';
         $param = null;
@@ -43,6 +45,7 @@ class Application
         } else {
             $controller->$actionName();
         }
+
 
     }
 
