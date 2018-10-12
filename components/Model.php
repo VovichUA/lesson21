@@ -20,13 +20,5 @@ class Model
         return $connection;
     }
 
-    public function fetchAll($query)
-    {
-        $sql = 'SELECT * FROM posts';
-        $query = $this->connection->prepare($sql);
-        $result = $query->fetchAll();
-        return $result;
-    }
-
 }
 
